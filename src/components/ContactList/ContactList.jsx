@@ -1,12 +1,12 @@
 import css from "./ContactList.module.css";
 import Contact from "../Contact/Contact";
 
-const ContactList = ({ contacts }) => {
+const ContactList = ({ filteredContacts, removeContact }) => {
   return (
     <ul className={css.cards}>
-      {contacts.map((contact) => (
+      {filteredContacts.map((contact) => (
         <li key={contact.id}>
-          <Contact contact={contact} />
+          <Contact contact={contact} removeContact={removeContact}/>
         </li>
       ))}
     </ul>
