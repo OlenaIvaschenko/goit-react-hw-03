@@ -2,13 +2,7 @@ import css from "./contact.module.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
 
-const Contact = ({ contact, removeContact}) => {
-
-const handleClick=()=>{
-
-  removeContact(contact.id);
-
-}
+const Contact = ({ contact:{id, name, number}, removeContact}) => {
 
 
   return (
@@ -16,14 +10,14 @@ const handleClick=()=>{
       <div className={css.info}>
         <div className={css.person}>
           <IoPerson />
-          <p className={css.p}>{contact.name}</p>
+          <p className={css.p}>{name}</p>
         </div>
         <div className={css.phoneNumber}>
           <FaPhoneAlt />
-          <p className={css.p}> {contact.number}</p>
+          <p className={css.p}> {number}</p>
         </div>
       </div>
-      <button onClick={handleClick}>Delete</button>
+      <button onClick={()=>removeContact(id)}>Delete</button>
     </div>
   );
 };

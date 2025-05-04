@@ -5,8 +5,8 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content:center;
-  align-items:flex-start;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .logo {
@@ -52,6 +52,6 @@ ul {
   text-align: left;
 }
 
-h1{
+h1 {
   text-align: left;
 }

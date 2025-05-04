@@ -1,23 +1,21 @@
-import css from "./SearchBox.module.css"
-import { useId } from 'react';
+import css from "./SearchBox.module.css";
+import { nanoid } from "nanoid";
 
+const SearchBox = ({ inputValue, onChange }) => {
+  const searchId = nanoid();
 
+  return (
+    <div className={css.filterContacts}>
+      <label htmlFor={searchId}>Find contacts by name</label>
+      <input
+        className={css.filterInput}
+        value={inputValue}
+        onChange={onChange}
+        type="text"
+        id={searchId}
+      />
+    </div>
+  );
+};
 
-const SearchBox=({inputValue, onChange})=>{
-    
-const searchId = useId();
-
-    return(
-        
-    
-    <>
-        <label htmlFor={'${searchId}'}>Find contacts by name</label>
-        <input value={inputValue} onChange={onChange}  type="text" id={'${searchId}'} />
-    </>
-    )
-
-}
-
-
-
-export default SearchBox
+export default SearchBox;
